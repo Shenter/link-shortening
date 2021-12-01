@@ -24,8 +24,6 @@ class UrlInput extends Component
      */
     public function shortenURL()
     {
-        $urlCreator = new LinkRepository($this->url);
-        $result = $urlCreator->putUrl();
-        $this->emit('buttonPressed', $result);
+        $this->emit('buttonPressed', $this->url);
     }
 }

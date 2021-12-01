@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 
+use App\Http\Classes\LinkRepository;
 use Livewire\Component;
 
 class ShortUrl extends Component
@@ -18,7 +19,9 @@ class ShortUrl extends Component
         $this->shortUrl = $shortUrl;
     }
 
-    public function displayUrl($result){
+    public function displayUrl($shortUrl){
+        $urlCreator = new LinkRepository($shortUrl);
+        $result = $urlCreator->putUrl();
         if($result===false) {
             $this->shortUrl = '<span style="color:red">Wrong URL provided</span>';
         }

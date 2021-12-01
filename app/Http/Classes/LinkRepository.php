@@ -27,12 +27,11 @@ class LinkRepository
 
     public function putUrl()
     {
-        if (filter_var($this->url, FILTER_VALIDATE_URL) === false)
+        if ($this->checkUrl($this->url) === false)
         {
             return false;
         }
-        do
-        {
+        do{
             $shortLink = Str::random(6);
         }
         while
@@ -40,6 +39,11 @@ class LinkRepository
 
         DB::table('links')->insert(['url'=>$this->url, 'short_url'=>$shortLink]);
         return $shortLink;
+    }
+
+    public function checkUrl()
+    {
+         return filter_var($this->url, FILTER_VALIDATE_URL)  ;
     }
 
 }
