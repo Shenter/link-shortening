@@ -13,4 +13,4 @@
 - composer install
 - npm install & npm run dev
 - 
-  ![Image](https://github.com/Shenter/link-shortening/blob/master/image.png?raw=true)
+  ![Image](https://github.com/Shenter/link-shortening/raw/master/image.png?raw=true)
