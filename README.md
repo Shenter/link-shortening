@@ -12,3 +12,5 @@
 # Установка:
 - composer install
 - npm install & npm run dev
+- 
+  !(https://github.com/Shenter/link-shortening/blob/master/image.png?raw=true)
